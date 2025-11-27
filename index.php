@@ -759,11 +759,11 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
             </div>
             
             <div class="social-links">
-                <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
-            </div>
+    <a href="https://github.com/teloz-founder/main-xelvoria" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://x.com/TelozDr" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.linkedin.com/in/daniel-gasc%C3%B3n-278960392/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://discord.gg/UdTH4wNa" title="Discord"><i class="fab fa-discord"></i></a>
+</div>
             
             <div class="footer-bottom">
                 <p>&copy; 2025 XELVORIA NEA. Todos los derechos reservados. | Implementando la llave de la conciencia artificial.</p>
