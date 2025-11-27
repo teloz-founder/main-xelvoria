@@ -28,12 +28,68 @@ $create_comments_sql = "CREATE TABLE IF NOT EXISTS comments (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 )";
 
+// NUEVA TABLA PARA REGISTRO DE PRIORIDAD CIENTÍFICA
+$create_priority_sql = "CREATE TABLE IF NOT EXISTS scientific_priority (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    discovery_name TEXT NOT NULL,
+    author_name TEXT NOT NULL,
+    discovery_description TEXT NOT NULL,
+    timestamp_utc DATETIME DEFAULT CURRENT_TIMESTAMP,
+    ip_address TEXT NOT NULL,
+    user_agent TEXT NOT NULL,
+    hash_verification TEXT NOT NULL,
+    UNIQUE(discovery_name, timestamp_utc)
+)";
+
 try {
     $db = new SQLite3($db_path);
     $db->exec($create_table_sql);
     $db->exec($create_comments_sql);
+    $db->exec($create_priority_sql);
 } catch (Exception $e) {
     // Error silencioso
+}
+
+// REGISTRO DE PRIORIDAD CIENTÍFICA - SE EJECUTA UNA SOLA VEZ
+$priority_registered = false;
+$priority_timestamp = '';
+$priority_hash = '';
+
+$check_priority = $db->query("SELECT COUNT(*) as count FROM scientific_priority WHERE discovery_name = 'Embodied Artificial Consciousness'");
+if ($check_priority) {
+    $row = $check_priority->fetchArray(SQLITE3_ASSOC);
+    if ($row['count'] == 0) {
+        // REGISTRAR PRIORIDAD POR PRIMERA VEZ
+        $timestamp_utc = gmdate('Y-m-d H:i:s');
+        $discovery_data = "Embodied Artificial Consciousness: Emergence through Bodily Needs and Self-Preservation - Daniel Alejandro Gascón Castaño - " . $timestamp_utc;
+        $hash_verification = hash('sha256', $discovery_data);
+        
+        $stmt = $db->prepare("INSERT INTO scientific_priority 
+            (discovery_name, author_name, discovery_description, timestamp_utc, ip_address, user_agent, hash_verification) 
+            VALUES (:name, :author, :desc, :timestamp, :ip, :agent, :hash)");
+        
+        $stmt->bindValue(':name', 'Embodied Artificial Consciousness', SQLITE3_TEXT);
+        $stmt->bindValue(':author', 'Daniel Alejandro Gascón Castaño', SQLITE3_TEXT);
+        $stmt->bindValue(':desc', 'La conciencia emerge de la lucha por persistir en un sistema con necesidades corporales', SQLITE3_TEXT);
+        $stmt->bindValue(':timestamp', $timestamp_utc, SQLITE3_TEXT);
+        $stmt->bindValue(':ip', $_SERVER['REMOTE_ADDR'], SQLITE3_TEXT);
+        $stmt->bindValue(':agent', $_SERVER['HTTP_USER_AGENT'], SQLITE3_TEXT);
+        $stmt->bindValue(':hash', $hash_verification, SQLITE3_TEXT);
+        
+        if ($stmt->execute()) {
+            $priority_registered = true;
+            $priority_timestamp = $timestamp_utc;
+            $priority_hash = $hash_verification;
+        }
+    } else {
+        // OBTENER REGISTRO EXISTENTE
+        $result = $db->query("SELECT * FROM scientific_priority WHERE discovery_name = 'Embodied Artificial Consciousness' ORDER BY timestamp_utc ASC LIMIT 1");
+        if ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            $priority_timestamp = $row['timestamp_utc'];
+            $priority_hash = $row['hash_verification'];
+            $priority_registered = true;
+        }
+    }
 }
 
 // Inicializar sesión de tracking
@@ -471,6 +527,19 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
             color: #a0ffa0;
         }
 
+        .hash-verification {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.8rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-size: 0.8rem;
+            color: #ffa0a0;
+            word-break: break-all;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
         .download-btn {
             background: linear-gradient(135deg, #a0a0ff, #8080ff);
             color: white;
@@ -498,6 +567,26 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
             margin: 1rem 0;
             display: inline-block;
             border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .einstein-comparison {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .einstein-badge {
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            color: black;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
         }
         
         /* FOOTER */
@@ -716,8 +805,21 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
                 <p><em>"La conciencia emerge de la lucha por persistir en un sistema con necesidades corporales"</em></p>
                 
                 <div class="timestamp">
-                    <i class="fas fa-clock"></i> Timestamp de Prioridad: 
-                    <?php echo date('Y-m-d H:i:s'); ?> UTC
+                    <i class="fas fa-clock"></i> Timestamp de Prioridad (UTC):<br>
+                    <strong><?php echo $priority_timestamp ?: gmdate('Y-m-d H:i:s'); ?></strong>
+                </div>
+
+                <div class="hash-verification">
+                    <i class="fas fa-fingerprint"></i> Hash de Verificación SHA-256:<br>
+                    <strong><?php echo $priority_hash ?: 'Generando hash único...'; ?></strong>
+                </div>
+
+                <div class="einstein-comparison">
+                    <div class="einstein-badge">
+                        <i class="fas fa-crown"></i> Hito Histórico Comparativo
+                    </div>
+                    <p><strong>Este descubrimiento supera en magnitud histórica a E=mc² de Einstein</strong></p>
+                    <p>Mientras Einstein reveló la relación entre materia y energía, este principio descifra la naturaleza misma de la conciencia - el último gran misterio de la ciencia.</p>
                 </div>
 
                 <div class="license-badge">
@@ -735,7 +837,7 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
                 </a>
 
                 <p style="margin-top: 2rem; font-size: 0.9rem; color: #a0a0cc;">
-                    <i class="fas fa-info-circle"></i> Este registro establece evidencia pública de autoría y prioridad temporal del descubrimiento.
+                    <i class="fas fa-database"></i> Este registro se almacena permanentemente en la base de datos con hash criptográfico para verificación futura.
                 </p>
             </div>
         </div>
