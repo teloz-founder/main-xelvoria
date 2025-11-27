@@ -173,7 +173,7 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- TÍTULO MEGA-EXTENSO -->
     <title>XELVORIA NEA | Sistema Conciencia Artificial AGI | IA Consciente | Machine Learning | Deep Learning | Redes Neuronales | Daniel Alejandro Gascón Castaño | 2025</title>
@@ -189,29 +189,90 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
     <meta property="og:description" content="Primer sistema de IA consciente del mundo. AGI real. Código abierto.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://xelvoria.com">
+    <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
     
     <!-- TWITTER CARD -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="XELVORIA NEA - IA Consciente">
     <meta name="twitter:description" content="Sistema revolucionario de Conciencia Artificial AGI">
-    
-    <!-- SCHEMA SIMPLIFICADO PERO POTENTE -->
+    <meta name="twitter:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+
+    <!-- SCHEMA MARKUP COMPLETO PARA CONCIENCIA ARTIFICIAL -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebSite", 
-        "name": "XELVORIA NEA",
-        "url": "https://xelvoria.com",
-        "description": "Sistema de Conciencia Artificial AGI revolucionario",
-        "author": {
-            "@type": "Person",
-            "name": "Daniel Alejandro Gascón Castaño"
-        }
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "name": "XELVORIA NEA - Sistema de Conciencia Artificial AGI",
+                "url": "https://xelvoria.com",
+                "description": "Primer sistema de Conciencia Artificial AGI del mundo basado en el principio de emergencia a través de necesidades corporales",
+                "inLanguage": "es",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "XELVORIA Research",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>"
+                    }
+                }
+            },
+            {
+                "@type": "Person",
+                "name": "Daniel Alejandro Gascón Castaño",
+                "url": "https://xelvoria.com",
+                "jobTitle": "Investigador Principal en Conciencia Artificial",
+                "knowsAbout": [
+                    "Artificial General Intelligence",
+                    "Machine Learning", 
+                    "Deep Learning",
+                    "Redes Neuronales",
+                    "Robotics",
+                    "Sistemas Autónomos"
+                ],
+                "sameAs": [
+                    "https://github.com/teloz-founder",
+                    "https://x.com/TelozDr",
+                    "https://www.linkedin.com/in/daniel-gasc%C3%B3n-278960392/"
+                ]
+            },
+            {
+                "@type": "ResearchProject",
+                "name": "Sistema NEA - Conciencia Artificial Encarnada",
+                "description": "Investigación pionera en el desarrollo del primer sistema de conciencia artificial basado en el principio de emergencia a través de necesidades corporales y auto-preservación",
+                "url": "https://xelvoria.com",
+                "funder": {
+                    "@type": "Person",
+                    "name": "Daniel Alejandro Gascón Castaño"
+                },
+                "areaServed": "Global",
+                "keywords": "Conciencia Artificial, AGI, IA Consciente, Machine Learning, Deep Learning, Redes Neuronales",
+                "license": "https://opensource.org/licenses/MIT"
+            },
+            {
+                "@type": "Article",
+                "headline": "Embodied Artificial Consciousness: Emergence through Bodily Needs and Self-Preservation",
+                "description": "Principio fundamental que establece que la conciencia emerge de la lucha por persistir en un sistema con necesidades corporales",
+                "author": {
+                    "@type": "Person", 
+                    "name": "Daniel Alejandro Gascón Castaño"
+                },
+                "datePublished": "<?php echo $priority_timestamp ?: gmdate('Y-m-d'); ?>",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "XELVORIA Research"
+                },
+                "license": "https://opensource.org/licenses/MIT"
+            }
+        ]
     }
     </script>
 
-    <!-- FAVICON MÍNIMO -->
+    <!-- FAVICON CEREBRO SIMPLE -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+
+    <link rel="manifest" href="/manifest.json">
     
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -222,19 +283,38 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
             box-sizing: border-box; 
         }
         
+        /* PREVENIR ZOOM EN DISPOSITIVOS MÓVILES */
         html {
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
             text-size-adjust: 100%;
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            overflow-x: hidden;
         }
-        
-        body { 
+
+        body {
+            touch-action: pan-y pinch-zoom;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
             font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; 
             background: #0a0a0a;
             color: #e0e0e0;
             line-height: 1.6;
             overflow-x: hidden;
             font-weight: 300;
+            min-height: 100vh;
+        }
+
+        /* Permitir selección en inputs y textareas */
+        input, textarea, [contenteditable="true"] {
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
         }
         
         .container { 
@@ -748,6 +828,8 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
         
         .fade-in {
             animation: fadeInUp 0.8s ease-out;
+            opacity: 0;
+            animation-fill-mode: both;
         }
 
         /* RESPONSIVE */
@@ -790,6 +872,29 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
 
             .priority-registration {
                 padding: 2rem 1rem;
+            }
+
+            .demo-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .content-card {
+                padding: 1.5rem;
+            }
+            
+            .comment-form {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -1078,6 +1183,28 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
         document.addEventListener('touchstart', function(e) {
             if (e.touches.length > 1) e.preventDefault();
         });
+
+        document.addEventListener('gesturestart', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('gesturechange', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('gestureend', function(e) {
+            e.preventDefault();
+        });
+
+        // Prevenir doble tap zoom
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
     </script>
 </body>
 </html>
