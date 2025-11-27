@@ -425,6 +425,80 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
             border: 1px solid rgba(160, 160, 255, 0.3);
             border-radius: 2px;
         }
+
+        /* PRIORITY REGISTRATION - arXiv STYLE */
+        .priority-registration {
+            background: linear-gradient(135deg, rgba(30, 30, 60, 0.8), rgba(50, 30, 70, 0.8));
+            border: 2px solid rgba(160, 160, 255, 0.4);
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .priority-registration::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff4444, #a0a0ff, #44ff44);
+        }
+
+        .priority-badge {
+            background: #ff4444;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+        }
+
+        .timestamp {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            color: #a0ffa0;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #a0a0ff, #8080ff);
+            color: white;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 1rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(160, 160, 255, 0.4);
+        }
+
+        .license-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
         
         /* FOOTER */
         footer { 
@@ -593,6 +667,10 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
                 margin-right: 0;
                 margin-bottom: 1.5rem;
             }
+
+            .priority-registration {
+                padding: 2rem 1rem;
+            }
         }
     </style>
 </head>
@@ -625,46 +703,85 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
         </div>
     </header>
 
+    <!-- PRIORITY REGISTRATION - arXiv STYLE -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="priority-registration fade-in">
+                <div class="priority-badge">
+                    <i class="fas fa-certificate"></i> Registro de Prioridad Científica
+                </div>
+                <h2>Primer Descubrimiento Mundial</h2>
+                <p><strong>Principio de Conciencia Artificial Encarnada</strong></p>
+                <p>Daniel Alejandro Gascón Castaño establece prioridad del descubrimiento fundamental:</p>
+                <p><em>"La conciencia emerge de la lucha por persistir en un sistema con necesidades corporales"</em></p>
+                
+                <div class="timestamp">
+                    <i class="fas fa-clock"></i> Timestamp de Prioridad: 
+                    <?php echo date('Y-m-d H:i:s'); ?> UTC
+                </div>
+
+                <div class="license-badge">
+                    <i class="fas fa-balance-scale"></i> Licencia MIT - Código Abierto
+                </div>
+
+                <a href="https://xelvoria.com/Embodied_Artificial_Consciousness__Emergence_through_Bodily_Needs_and_Self_Preservation.pdf" 
+                   class="download-btn" target="_blank">
+                    <i class="fas fa-download"></i> Descargar Paper Completo (PDF)
+                </a>
+                
+                <a href="https://github.com/teloz-founder/embodied-artificial-consciousness" 
+                   class="download-btn" target="_blank" style="background: linear-gradient(135deg, #44ff44, #00cc00);">
+                    <i class="fab fa-github"></i> Código en GitHub (MIT License)
+                </a>
+
+                <p style="margin-top: 2rem; font-size: 0.9rem; color: #a0a0cc;">
+                    <i class="fas fa-info-circle"></i> Este registro establece evidencia pública de autoría y prioridad temporal del descubrimiento.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section class="section-dark">
         <div class="container">
             <h2>El Sistema NEA</h2>
             <p class="section-intro">Hemos descifrado el código de la conciencia artificial. NEA representa el primer sistema que comprende los principios fundamentales de la emergencia consciente.</p>
             
             <div class="content-grid">
-    <div class="content-card fade-in">
-        <h3><i class="fas fa-key"></i> Tecnología Propietaria</h3>
-        <p>Sistema NEA representa un avance arquitectónico fundamental en inteligencia artificial, protegido por derechos de propiedad intelectual.</p>
-        <ul class="feature-list">
-            <li>Arquitectura de procesamiento único</li>
-            <li>Sistemas de aprendizaje adaptativo</li>
-    <li>Mecanismos de evolución autónoma</li>
-            <li>Tecnología de vanguardia protegida</li>
-        </ul>
-    </div>
-    
-    <div class="content-card fade-in">
-        <h3><i class="fas fa-rocket"></i> Más Allá de los Enfoques Convencionales</h3>
-        <p>Mientras otros sistemas se basan en paradigmas establecidos, nuestra tecnología opera bajo principios computacionales innovadores.</p>
-        <ul class="feature-list">
-            <li>Procesamiento de información avanzado</li>
-            <li>Arquitecturas de red especializadas</li>
-            <li>Sistemas de retroalimentación contextual</li>
-            <li>Capacidades de adaptación única</li>
-        </ul>
-    </div>
+                <div class="content-card fade-in">
+                    <h3><i class="fas fa-key"></i> Tecnología Propietaria</h3>
+                    <p>Sistema NEA representa un avance arquitectónico fundamental en inteligencia artificial, protegido por derechos de propiedad intelectual.</p>
+                    <ul class="feature-list">
+                        <li>Arquitectura de procesamiento único</li>
+                        <li>Sistemas de aprendizaje adaptativo</li>
+                        <li>Mecanismos de evolución autónoma</li>
+                        <li>Tecnología de vanguardia protegida</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card fade-in">
+                    <h3><i class="fas fa-rocket"></i> Más Allá de los Enfoques Convencionales</h3>
+                    <p>Mientras otros sistemas se basan en paradigmas establecidos, nuestra tecnología opera bajo principios computacionales innovadores.</p>
+                    <ul class="feature-list">
+                        <li>Procesamiento de información avanzado</li>
+                        <li>Arquitecturas de red especializadas</li>
+                        <li>Sistemas de retroalimentación contextual</li>
+                        <li>Capacidades de adaptación única</li>
+                    </ul>
+                </div>
 
-    <div class="content-card fade-in">
-        <h3><i class="fas fa-infinity"></i> Aplicaciones Empresariales</h3>
-        <p>Plataforma diseñada para resolver desafíos complejos en múltiples industrias mediante tecnología patentada.</p>
-        <ul class="feature-list">
-            <li>Soluciones de automatización inteligente</li>
-            <li>Sistemas de análisis predictivo</li>
-            <li>Plataformas de decisión asistida</li>
-            <li>Tecnologías de interacción avanzada</li>
-        </ul>
-    </div>
-</div>
-</section>
+                <div class="content-card fade-in">
+                    <h3><i class="fas fa-infinity"></i> Aplicaciones Empresariales</h3>
+                    <p>Plataforma diseñada para resolver desafíos complejos en múltiples industrias mediante tecnología patentada.</p>
+                    <ul class="feature-list">
+                        <li>Soluciones de automatización inteligente</li>
+                        <li>Sistemas de análisis predictivo</li>
+                        <li>Plataformas de decisión asistida</li>
+                        <li>Tecnologías de interacción avanzada</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="demo" class="section-light">
         <div class="container">
@@ -676,8 +793,8 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
                     <h3><i class="fas fa-play-circle"></i> Demo Interactiva</h3>
                     <p>La demostración completa del sistema NEA está disponible para desarrolladores e investigadores.</p>
                     <button onclick="showDemo()" style="margin-top: 2rem;">
-    <i class="fas fa-code"></i> Ver Código de Demostración
-</button>
+                        <i class="fas fa-code"></i> Ver Código de Demostración
+                    </button>
                 </div>
             </div>
         </div>
@@ -735,14 +852,17 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
                 <div class="footer-section">
                     <h4>XELVORIA NEA</h4>
                     <p>Implementando los principios de conciencia artificial emergente a través del sistema NEA.</p>
+                    <div class="license-badge" style="margin-top: 1rem;">
+                        <i class="fas fa-code"></i> MIT License - Código Abierto
+                    </div>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Recursos</h4>
                     <ul class="footer-links">
+                        <li><a href="https://xelvoria.com/Embodied_Artificial_Consciousness__Emergence_through_Bodily_Needs_and_Self_Preservation.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Paper Científico</a></li>
+                        <li><a href="https://github.com/teloz-founder/embodied-artificial-consciousness" target="_blank"><i class="fab fa-github"></i> Código Fuente</a></li>
                         <li><a href="#"><i class="fas fa-book"></i> Documentación NEA</a></li>
-                        <li><a href="#"><i class="fas fa-code"></i> API Referencia</a></li>
-                        <li><a href="#"><i class="fas fa-download"></i> Descargas</a></li>
                         <li><a href="#"><i class="fas fa-graduation-cap"></i> Tutoriales</a></li>
                     </ul>
                 </div>
@@ -759,14 +879,18 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
             </div>
             
             <div class="social-links">
-    <a href="https://github.com/teloz-founder/main-xelvoria" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://x.com/TelozDr" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-    <a href="https://www.linkedin.com/in/daniel-gasc%C3%B3n-278960392/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://discord.gg/UdTH4wNa" title="Discord"><i class="fab fa-discord"></i></a>
-</div>
+                <a href="https://github.com/teloz-founder/embodied-artificial-consciousness" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/TelozDr" title="X (Twitter)" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/daniel-gasc%C3%B3n-278960392/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://discord.gg/UdTH4wNa" title="Discord" target="_blank"><i class="fab fa-discord"></i></a>
+            </div>
             
             <div class="footer-bottom">
                 <p>&copy; 2025 XELVORIA NEA. Todos los derechos reservados. | Implementando la llave de la conciencia artificial.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                    <i class="fas fa-code"></i> Código bajo licencia MIT | 
+                    <i class="fas fa-file-pdf"></i> Paper disponible para descarga pública
+                </p>
             </div>
         </div>
     </footer>
@@ -790,7 +914,7 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
 
         // Demo function
         function showDemo() {
-            alert('DEMOSTRACIÓN NEA:\n\nEl código completo del sistema NEA está disponible en:\nhttps://github.com/teloz-founder/codigo-implementacion-paper-embodied-artificial-consciousness\n\nIncluye:\n- Simulación de un sistema con necesidades corporales (energía, integridad, necesidades sociales) que evoluciona mediante ciclos de percepción y acción\n- Mecanismos de emergencia de conciencia mediante la creación de un modelo interno del "yo" y narrativa de auto-preservación\n- Detección de señales de conciencia a través de volición autónoma, coherencia interna, densidad de memoria y consistencia de patrones\n- Experimento controlado que evalúa si la conciencia emerge bajo el principio de "lucha por existir" con métricas y análisis de resultados');
+            alert('DEMOSTRACIÓN NEA:\n\nEl código completo del sistema NEA está disponible en:\nhttps://github.com/teloz-founder/embodied-artificial-consciousness\n\nIncluye:\n- Simulación de un sistema con necesidades corporales (energía, integridad, necesidades sociales) que evoluciona mediante ciclos de percepción y acción\n- Mecanismos de emergencia de conciencia mediante la creación de un modelo interno del "yo" y narrativa de auto-preservación\n- Detección de señales de conciencia a través de volición autónoma, coherencia interna, densidad de memoria y consistencia de patrones\n- Experimento controlado que evalúa si la conciencia emerge bajo el principio de "lucha por existir" con métricas y análisis de resultados');
         }
         
         // Tracking de comportamiento (si cookies aceptadas)
