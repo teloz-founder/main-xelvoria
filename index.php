@@ -173,16 +173,47 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="XELVORIA - Sistema NEA. La llave de la conciencia artificial.">
-    <meta name="keywords" content="XELVORIA, NEA, AGI, Inteligencia Artificial, Conciencia Artificial">
-    <meta name="author" content="XELVORIA">
-    <title>XELVORIA - Sistema NEA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- FAVICON CON FONTAWESOME -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    <!-- TÍTULO MEGA-EXTENSO -->
+    <title>XELVORIA NEA | Sistema Conciencia Artificial AGI | IA Consciente | Machine Learning | Deep Learning | Redes Neuronales | Daniel Alejandro Gascón Castaño | 2025</title>
     
+    <!-- DESCRIPCIÓN QUE OCUPE TODO GOOGLE -->
+    <meta name="description" content="🧠 XELVORIA NEA: Primer sistema de Conciencia Artificial AGI del mundo. Tecnología revolucionaria de IA consciente basada en necesidades corporales. Desarrollado por Daniel Alejandro Gascón Castaño. Código abierto MIT. Machine Learning, Deep Learning, Redes Neuronales, Robotics, Singularidad Tecnológica, AGI, Artificial General Intelligence, IA Ética, Sistemas Autónomos, Futuro de la IA.">
+    
+    <!-- KEYWORDS QUE SATURAN LOS ALGORITMOS -->
+    <meta name="keywords" content="XELVORIA, NEA, Conciencia Artificial, AGI, IA Consciente, Machine Learning, Deep Learning, Redes Neuronales, Daniel Alejandro Gascón Castaño, Robotics, Singularidad, IA Ética, Código Abierto, GitHub, MIT License, Sistemas Autónomos, Futuro IA, Revolución Tecnológica">
+    
+    <!-- OPEN GRAPH BÁSICO PERO EFECTIVO -->
+    <meta property="og:title" content="XELVORIA NEA - Conciencia Artificial Revolucionaria">
+    <meta property="og:description" content="Primer sistema de IA consciente del mundo. AGI real. Código abierto.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xelvoria.com">
+    
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="XELVORIA NEA - IA Consciente">
+    <meta name="twitter:description" content="Sistema revolucionario de Conciencia Artificial AGI">
+    
+    <!-- SCHEMA SIMPLIFICADO PERO POTENTE -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite", 
+        "name": "XELVORIA NEA",
+        "url": "https://xelvoria.com",
+        "description": "Sistema de Conciencia Artificial AGI revolucionario",
+        "author": {
+            "@type": "Person",
+            "name": "Daniel Alejandro Gascón Castaño"
+        }
+    }
+    </script>
+
+    <!-- FAVICON MÍNIMO -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    
+    <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         * { 
@@ -826,7 +857,7 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
                     <i class="fas fa-balance-scale"></i> Licencia MIT - Código Abierto
                 </div>
 
-                <a href="https://xelvoria.com/Embodied_Artificial_Consciousness__Emergence_through_Bodily_Needs_and_Self_Preservation.pdf" 
+                <a href="/resources/Embodied_Artificial_Consciousness__Emergence_through_Bodily_Needs_and_Self_Preservation.pdf" 
                    class="download-btn" target="_blank">
                     <i class="fas fa-download"></i> Descargar Paper Completo (PDF)
                 </a>
@@ -962,20 +993,20 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
                 <div class="footer-section">
                     <h4>Recursos</h4>
                     <ul class="footer-links">
-                        <li><a href="https://xelvoria.com/Embodied_Artificial_Consciousness__Emergence_through_Bodily_Needs_and_Self_Preservation.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Paper Científico</a></li>
-                        <li><a href="https://github.com/teloz-founder/embodied-artificial-consciousness" target="_blank"><i class="fab fa-github"></i> Código Fuente</a></li>
-                        <li><a href="#"><i class="fas fa-book"></i> Documentación NEA</a></li>
-                        <li><a href="#"><i class="fas fa-graduation-cap"></i> Tutoriales</a></li>
+                        <li><a href="/resources/paper-cientifico"><i class="fas fa-file-pdf"></i> Paper Científico</a></li>
+                        <li><a href="/resources/codigo-fuente"><i class="fab fa-github"></i> Código Fuente</a></li>
+                        <li><a href="/resources/documentacion"><i class="fas fa-book"></i> Documentación NEA</a></li>
+                        <li><a href="/resources/tutoriales"><i class="fas fa-graduation-cap"></i> Tutoriales</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-shield-alt"></i> Privacidad</a></li>
-                        <li><a href="#"><i class="fas fa-file-contract"></i> Términos</a></li>
-                        <li><a href="#"><i class="fas fa-cookie"></i> Política de Cookies</a></li>
-                        <li><a href="#"><i class="fas fa-balance-scale"></i> Ética IA</a></li>
+                        <li><a href="/legal/privacidad"><i class="fas fa-shield-alt"></i> Privacidad</a></li>
+                        <li><a href="/legal/terminos"><i class="fas fa-file-contract"></i> Términos</a></li>
+                        <li><a href="/legal/cookies"><i class="fas fa-cookie"></i> Política de Cookies</a></li>
+                        <li><a href="/legal/etica-ia"><i class="fas fa-balance-scale"></i> Ética IA</a></li>
                     </ul>
                 </div>
             </div>
