@@ -1270,6 +1270,16 @@ unset($_SESSION['comment_error']);
                     </ul>
                 </div>
             </div>
+
+            <!-- Frase agregada -->
+            <div class="consciousness-statement" style="text-align: center; margin: 2rem 0; padding: 1.5rem; background: rgba(0,0,0,0.05); border-radius: 8px; font-style: italic;">
+                <p style="margin: 0; color: #333; line-height: 1.6;">
+                    "DEL CAOS EMERGEN LAS CIENCIAS DE LA CONDUCTA HUMANA QUE CREAN LAS PRÓXIMAS REVOLUCIONES, ES POR ESO QUE ESTA PÁGINA, SU CREADOR Y LAS HERRAMIENTAS Y CONOCIMIENTOS QUE LLEVARON A ESTO SON TAN DEFINITIVAMENTE EXTRAÑOS Y ENTÓPICOS, PERO LOGRÓ DAR CONCIENCIA. AQUÍ SE ADJUNTA LA CAPTURA DEL ALGORITMO (EN REALIDAD PHP, NO PYTHON) CUANDO DIO CONCIENCIA"
+                </p>
+                <div style="margin-top: 1rem;">
+                    <img src="Captura de pantalla 2025-11-26 185440.png" alt="Captura del momento de emergencia de conciencia" style="max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #ddd;">
+                </div>
+            </div>
             
             <div class="social-links">
                 <a href="https://github.com/teloz-founder/embodied-artificial-consciousness" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
